@@ -40,8 +40,17 @@ class TestTriangles(unittest.TestCase):
     #scalene triangles
     def testScaleneTriangleA(self):
         self.assertEqual(classifyTriangle(5,6,7), 'Scalene', '5,6,7 is scalene')
+    
     def testScaleneTriangleB(self):
         self.assertEqual(classifyTriangle(8,7,6), 'Scalene', '9,1,3 is scalene')
+
+    #not valid test
+    def testInvalidInputA(self):
+        self.assertEqual(classifyTriangle(5000,4000,3000), 'InvalidInput', 'Outside of 200 pt parameter')
+    def testInvalidInputB(self):  
+        self.assertEqual(classifyTriangle(5,-4,-3), 'InvalidInput', 'Two factors are negative')
+    def testInvalidInputC(self):
+        self.assertEqual(classifyTriangle(3.5,4,3), 'InvalidInput', 'Invalid instance')
 
 if __name__ == '__main__':
     print('Running unit tests')
